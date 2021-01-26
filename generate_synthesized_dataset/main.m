@@ -12,14 +12,14 @@ x_rate=16;
 y_rate=16;
 total_image_num=1000;
 blur_type =  'gaussian';
-opt.dataset = 'B';
+opt.dataset = 'A';
 switch opt.dataset
     case 'A'
-    opt.save_folder = './partA';
+    opt.save_folder = '../data/synthesized_dataset/partA';
     case 'B'
-    opt.save_folder = './partB';
+    opt.save_folder = '../data/synthesized_dataset/partB';
     case 'Q'
-    opt.save_folder = './QNRF';
+    opt.save_folder = '../data/synthesized_dataset/QNRF';
 end
 gen_dataset(x_rate, y_rate, total_image_num, blur_type, opt);
 
