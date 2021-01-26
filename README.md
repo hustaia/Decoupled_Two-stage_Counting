@@ -14,7 +14,7 @@ Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Hao Lu<sup>
 
 ### Model Structure
 <p align="left">
-  <img src="overview.png" width="850" title="Example"/>
+  <img src="overview.PNG" width="850" title="Example"/>
 </p>
 
 ## Installation
@@ -27,7 +27,7 @@ cd prepare_dataset
 python normalize_QNRF.py
 ```
 
-2. Generate synthesized dataset by running *generate_synthesized_dataset/main.m* in Matlab.
+2. Generate synthesized dataset by running `generate_synthesized_dataset/main.m` in Matlab.
 
 3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset.
 ```
