@@ -192,9 +192,10 @@ for img_path in img_paths:
 '''
 
 
-#synthesized_dataset_parta
-'''
-path = "/data0/dataset/chengjian/virtual_dataset/partA/dotmap"
+#synthesized_dataset_parta_qnrf
+
+path = "../data/synthesized_dataset/partA/dotmap"
+#path = "../data/synthesized_dataset/QNRF/dotmap"
 path_new = path.replace('dotmap','probmap')
 if  not os.path.exists(path_new):
     os.makedirs(path_new)
@@ -212,18 +213,18 @@ for img_path in img_paths:
     k = k['dotmap'] / 255.
     k1 = gaussian_filter_prob(k)
     k2 = gaussian_filter_density(k)
-    with h5py.File(img_path.replace('.mat','.h5'), 'w') as hf:
-        hf['density'] = k
+    #with h5py.File(img_path.replace('.mat','.h5'), 'w') as hf:
+        #hf['density'] = k
     with h5py.File(img_path.replace('.mat','.h5').replace('dotmap','probmap'), 'w') as hf:
         hf['density'] = k1
     with h5py.File(img_path.replace('.mat','.h5').replace('dotmap','densitymap'), 'w') as hf:
         hf['density'] = k2
-'''
+
 
 
 #synthesized_dataset_partb
 '''
-path = "/data0/dataset/chengjian/virtual_dataset/partB/dotmap"
+path = "../data/synthesized_dataset/partB/dotmap"
 path_new = path.replace('dotmap','probmap')
 if  not os.path.exists(path_new):
     os.makedirs(path_new)
@@ -241,8 +242,8 @@ for img_path in img_paths:
     k = k['dotmap'] / 255.
     k1 = gaussian_filter_prob_fixed(k)
     k2 = gaussian_filter(k, 15)
-    with h5py.File(img_path.replace('.mat','.h5'), 'w') as hf:
-        hf['density'] = k
+    #with h5py.File(img_path.replace('.mat','.h5'), 'w') as hf:
+        #hf['density'] = k
     with h5py.File(img_path.replace('.mat','.h5').replace('dotmap','probmap'), 'w') as hf:
         hf['density'] = k1
     with h5py.File(img_path.replace('.mat','.h5').replace('dotmap','densitymap'), 'w') as hf:
