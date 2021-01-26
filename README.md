@@ -6,16 +6,25 @@ This repository includes the official implementation of D2CNet for crowd countin
 
 IEEE Transactions on Image Processing(TIP), 2020
 
-Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Hao Lu<sup>1</sup>, Zhiguo Cao<sup>1</sup>
+Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Zhiguo Cao<sup>1</sup>, Hao Lu<sup>1</sup>
 
 <sup>1</sup>Huazhong University of Science and Technology
 
 <sup>&dagger;</sup> equal contribution
 
-### Model Structure
+### Overview
 <p align="left">
-  <img src="overview.PNG" width="850" title="Example"/>
+  <img src="pngs/overview.PNG" width="850" title="Overview"/>
 </p>
+
+### Visualization
+<p align="left">
+  <img src="pngs/visualization.PNG" width="650" title="Visualization"/>
+</p>
+
+### Highlights
+- **Simple and effective:** With only basic network architecture and simple training procedures, D2CNet obtains impressive results;
+- **Multifunctional:** D2C framework not only unifies object counting and object localization but also enables synthesized data augmentation and flexible counting error diagnosis.
 
 ## Installation
 The code has been tested on Python 3.7.6 and PyTorch 1.5.0. Please follow the official instructions to configure your environment. See other required packages in `requirements.txt`.
@@ -27,9 +36,9 @@ cd prepare_dataset
 python normalize_QNRF.py
 ```
 
-2. Generate synthesized dataset by running `generate_synthesized_dataset/main.m` in Matlab.
+2. Generate synthesized dataset by running *generate_synthesized_dataset/main.m* in Matlab.
 
-3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset, so it's better to split it into several parts and process them in parallel.
+3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset, so it's better to split it into several parts and prepare them in parallel.
 ```
 python make_dataset.py
 ```
@@ -42,17 +51,20 @@ python prepare_dataset/filepath2json.py ./data/shanghaitech/part_A_final/train_d
 
 ## Training
 ```
-python train.py [path to training json] [path to testing json] [GPU] [TASK]
+python train.py part_A_train.json part_A_test.json 0 0
 ```
 
 ## Testing
-Download the pretrained models. 
-PartA [BaiduYun](https://pan.baidu.com/s/1x-Mu1bKbcQI48bmszLrFGA) (code: 3qal) 
-PartB [BaiduYun](https://pan.baidu.com/s/10PHLUu_FXWjY1gOT6iCKYw) (code: ybfp) 
-QNRF [BaiduYun](https://pan.baidu.com/s/1nA3EaiVRqKiNjqKL4f04-Q) (code: xrjq) 
+Download the pretrained models to the main folder. 
+
+PartA (MAE: 55.673, MSE: 87.161) [BaiduYun](https://pan.baidu.com/s/1x-Mu1bKbcQI48bmszLrFGA) (code: 3qal) 
+
+PartB (MAE: 6.367, MSE: 10.716) [BaiduYun](https://pan.baidu.com/s/10PHLUu_FXWjY1gOT6iCKYw) (code: ybfp) 
+
+QNRF (MAE: 81.698, MSE: 137.925) [BaiduYun](https://pan.baidu.com/s/1nA3EaiVRqKiNjqKL4f04-Q) (code: xrjq) 
 
 ```
-python train.py --pre [path to pretrained model] [path to training json] [path to testing json] [GPU] [TASK] --mode [1 or 2]
+python train.py --pre partA.pth.tar part_A_train.json part_A_test.json 0 0 --mode 1
 ```
 Mode 1 is for counting evaluation, and mode 2 is for localization evaluation.
 
