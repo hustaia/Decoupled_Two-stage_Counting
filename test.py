@@ -25,14 +25,14 @@ CMR = TasselNet_VGG16()
 PMR = PMR.cuda()
 CMR = CMR.cuda()
 
-checkpoint = torch.load("/data0/dataset/chengjian/PycharmProjects/d2cnet/partA.pth.tar")
+checkpoint = torch.load("./partA.pth.tar")
 
 PMR.load_state_dict(checkpoint['state_dict1'])
 PMR.eval()
 CMR.load_state_dict(checkpoint['state_dict2'])
 CMR.eval()
 
-img_path = "/data0/dataset/chengjian/shanghaitech/part_A_final/test_data/images/IMG_100.jpg"
+img_path = "./data/shanghaitech/part_A_final/test_data/images/IMG_100.jpg"
 img = Image.open(img_path).convert('RGB')
 
 w,h = img.size

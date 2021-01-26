@@ -14,28 +14,30 @@ Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Hao Lu<sup>
 
 ### Model Structure
 <p align="left">
-  <img src="overview.PNG" width="850" title="Example"/>
+  <img src="overview.png" width="850" title="Example"/>
 </p>
 
 ## Installation
 The code has been tested on Python 3.7.6 and PyTorch 1.5.0. Please follow the official instructions to configure your environment. See other required packages in `requirements.txt`.
 
 ## Data Preparation
-1. Download the official ShanghaiTech and UCF_QNRF dataset. Resize images in UCF_QNRF to ensure the longer side is not greater than 1920.
+1. Download the official ShanghaiTech and UCF_QNRF dataset under `./data`. Resize images in UCF_QNRF to ensure the longer side is not greater than 1920.
 ```
-python prepare_dataset/normalize_QNRF.py
+cd prepare_dataset
+python normalize_QNRF.py
 ```
 
 2. Generate synthesized dataset by running *generate_synthesized_dataset/main.m* in Matlab.
 
 3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset.
 ```
-python prepare_dataset/make_dataset.py
+python make_dataset.py
 ```
 
 4. Generate json files of training and testing data.
 ```
-python prepare_dataset/filepath2json.py
+cd ..
+python prepare_dataset/filepath2json.py ./data/shanghaitech/part_A_final/train_data/images/ part_A_train.json
 ```
 
 ## Training

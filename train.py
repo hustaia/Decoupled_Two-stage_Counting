@@ -223,11 +223,11 @@ def train(train_list, PMR, CMR, criterion, optimizer1, optimizer2, epoch):
             number = int(999 * random.random()) + 1
             number = '{:0>6d}'.format(number)
             if 'A' in args.train_json:
-                img_path = "/data0/dataset/chengjian/virtual_dataset/partA/dotmap/" + number + '.h5'
+                img_path = "./data/synthesized_dataset/partA/dotmap/" + number + '.h5'
             elif 'B' in args.train_json:
-                img_path = "/data0/dataset/chengjian/virtual_dataset/partB/dotmap/" + number + '.h5'
+                img_path = "./data/synthesized_dataset/partB/dotmap/" + number + '.h5'
             elif 'Q' in args.train_json:
-                img_path = "/data0/dataset/chengjian/virtual_dataset/QNRF/dotmap/" + number + '.h5'
+                img_path = "./data/synthesized_dataset/QNRF/dotmap/" + number + '.h5'
             prob_file = h5py.File(img_path.replace('dotmap','probmap'),'r')
             probmap = np.asarray(prob_file['density'])
             count_file = h5py.File(img_path.replace('dotmap','densitymap'),'r')
