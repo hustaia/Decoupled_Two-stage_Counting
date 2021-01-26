@@ -14,7 +14,7 @@ Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Hao Lu<sup>
 
 ### Model Structure
 <p align="left">
-  <img src="overview.png" width="850" title="Example"/>
+  <img src="overview.PNG" width="850" title="Example"/>
 </p>
 
 ## Installation
