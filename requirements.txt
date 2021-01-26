@@ -1,0 +1,8 @@
+opencv-python
+numpy
+pandas
+matplotlib
+scipy
+pillow
+h5py
+skimage
