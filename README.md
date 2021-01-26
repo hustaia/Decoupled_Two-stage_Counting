@@ -29,7 +29,7 @@ python normalize_QNRF.py
 
 2. Generate synthesized dataset by running `generate_synthesized_dataset/main.m` in Matlab.
 
-3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset.
+3. Generate probability maps, density maps and dot maps. It may take several days to prepare the UCF_QNRF dataset, so it's better to split it into several parts and process them in parallel.
 ```
 python make_dataset.py
 ```
