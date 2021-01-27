@@ -1,4 +1,4 @@
-# Decoupled_Two-stage_Counting
+# Decoupled Two-Stage Counting
 
 This repository includes the official implementation of D2CNet for crowd counting, presented in our paper:
 
@@ -6,9 +6,9 @@ This repository includes the official implementation of D2CNet for crowd countin
 
 IEEE Transactions on Image Processing(TIP), 2020
 
-Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Zhiguo Cao<sup>1</sup>, Hao Lu<sup>1</sup>
+Jian Cheng<sup>&dagger;</sup>, Haipeng Xiong<sup>&dagger;</sup>, Zhiguo Cao, Hao Lu
 
-<sup>1</sup>Huazhong University of Science and Technology
+Huazhong University of Science and Technology
 
 <sup>&dagger;</sup> equal contribution
 
@@ -23,7 +23,8 @@ Jian Cheng<sup>1,&dagger;</sup>, Haipeng Xiong<sup>1,&dagger;</sup>, Zhiguo Cao<
 </p>
 
 ### Highlights
-- **Simple and effective:** With only basic network architecture and simple training procedures, D2CNet obtains impressive results;
+- **New representation of crowd**: We introduce the concept of the probability map which describes the probability of a point being an object;
+- **Simple and effective:** With only a basic network architecture and simple training procedures, D2CNet obtains state-of-the-art counting and localization performance;
 - **Multifunctional:** D2C framework not only unifies object counting and object localization but also enables synthesized data augmentation and flexible counting error diagnosis.
 
 ## Installation
@@ -72,4 +73,4 @@ Mode 1 is for counting evaluation, and mode 2 is for localization evaluation.
 The code are only for non-commercial purposes. Copyrights reserved.
 
 Contact: 
-Jian Cheng (jian_cheng@hust.edu.cn)
+Jian Cheng (jian_cheng@hust.edu.cn) and Hao Lu (hlu@hust.edu.cn)
