@@ -2,7 +2,7 @@
 
 This repository includes the official implementation of D2CNet for crowd counting and localization, presented in our paper:
 
-**[Decoupled Two-Stage Crowd Counting and Beyond](website here)**
+**[Decoupled Two-Stage Crowd Counting and Beyond](https://ieeexplore.ieee.org/document/9347700)**
 
 IEEE Transactions on Image Processing, 2021
 
